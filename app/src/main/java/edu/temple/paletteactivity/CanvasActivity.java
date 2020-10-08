@@ -22,7 +22,7 @@ public class CanvasActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int color = intent.getIntExtra(PaletteActivity.colorSelected, 0);
 
-
+       
         if(color == 0 ){
             gridtext.setText("TRANSPARENT");
             backgroundcolor.addView(gridtext);
