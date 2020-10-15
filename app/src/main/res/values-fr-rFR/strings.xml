@@ -5,7 +5,7 @@
     <string name="PaletteActivity">Activité de la palette</string>
     <string name="CanvasActivity">Activité de toile</string>
     <string name="labletext">Sélectionnez une couleur ci-dessous pour lancer le canevas</string>
-
+             
     <string-array name="MyArray">
         <item>ROUGE</item>
         <item>JAUNE</item>
