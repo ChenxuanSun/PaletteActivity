@@ -7,51 +7,71 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class ColorAdapter extends BaseAdapter {
+
     Context context;
-    String colors[];
+    String[] color;
+    int colors[];
 
-     int [] AddColors = {Color.TRANSPARENT,Color.MAGENTA,Color.CYAN,Color.DKGRAY,Color.LTGRAY,Color.GRAY,Color.WHITE,Color.BLACK,Color.BLUE,Color.GREEN,Color.YELLOW,Color.RED};
 
-    public ColorAdapter(Context context, String[] colors){
+    public ColorAdapter(Context context, String[] color){
         this.context = context;
-        this.colors = colors;
+        this.color = color;
+
+
+        colors = new int[13];
+        colors[0] = Color.RED;
+        colors[1] = Color.YELLOW;
+        colors[2] = Color.WHITE;
+        colors[3] = Color.GREEN;
+        colors[4] = Color.BLUE;
+        colors[5] = Color.GRAY;
+        colors[6] = Color.WHITE;
+        colors[7] = Color.BLACK;
+        colors[8] = Color.CYAN;
+        colors[9] = Color.GREEN;
+        colors[10] = Color.MAGENTA;
+        colors[11] = Color.RED;
 
     }
+
     @Override
     public int getCount() {
-        return colors.length;
+        return color.length;
     }
 
     @Override
-    public Object getItem(int i) {
-        return colors[i];
+    public Object getItem(int position) {
+        return color[position];
     }
 
     @Override
-    public long getItemId(int i) {
+    public long getItemId(int position) {
         return 0;
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup parent) {
-
+    public View getView(int position, View convertView, ViewGroup parent) {
 
         TextView textView;
-        if(view == null){
+        if (convertView == null) {
             textView = new TextView(context);
-        }else{
-            textView = (TextView) view;
+
+        } else{
+            textView = (TextView) convertView;
         }
-        //set up textView
-        textView.setPadding(20,20,20,20);
-        textView.setText(getItem(i).toString());
-        textView.setBackgroundColor(AddColors[i % AddColors.length]);
+
+        textView.setTextSize(20);
+        textView.setPadding(28,28,28,28);
+        textView.setText(getItem(position).toString());
+        textView.setBackgroundColor(colors[position % colors.length]);
         return textView;
     }
-    public View getDropDownView(int i, View view, ViewGroup parent){
-        return getView(i,view,parent);
+
+    @Override
+    public View getDropDownView(int position, View convertView, ViewGroup parent) {
+        View v = getView(position, convertView, parent);
+        return v;
     }
+
 }

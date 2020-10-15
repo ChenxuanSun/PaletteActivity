@@ -1,92 +1,40 @@
 package edu.temple.paletteactivity;
 
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
 public class CanvasActivity extends AppCompatActivity {
-    ConstraintLayout backgroundcolor;
-    @Override
+    @SuppressLint("ResourceType")
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_canvas);
 
-         TextView gridtext = new TextView(this);
+        getSupportActionBar().setTitle(R.string.CanvasActivity);
 
-        backgroundcolor =  findViewById(R.id.gridlayout);
-        Intent intent = getIntent();
-        int color = intent.getIntExtra(PaletteActivity.colorSelected, 0);
+        Intent start = getIntent();
+        String mycolor = start.getStringExtra("colors");
+        String label = start.getStringExtra("Mylabel");
 
-       
-        if(color == 0 ){
-            gridtext.setText("TRANSPARENT");
-            backgroundcolor.addView(gridtext);
-            backgroundcolor.setBackgroundColor(Color.TRANSPARENT);
-            backgroundcolor.setPadding(470,700,450,100);
-        }else if(color == 1){
-            backgroundcolor.setBackgroundColor(Color.MAGENTA);
-            gridtext.setText("MAGENTA");
-            backgroundcolor.addView(gridtext);
-            backgroundcolor.setPadding(470,700,450,100);
-        }
-        else if(color == 2){
-            backgroundcolor.setBackgroundColor(Color.CYAN);
-            gridtext.setText("CYAN");
-            backgroundcolor.addView(gridtext);
-            backgroundcolor.setPadding(470,700,450,100);
-        }else if(color == 3){
-            backgroundcolor.setBackgroundColor(Color.DKGRAY);
-            gridtext.setText("DARK GRAY");
-            backgroundcolor.addView(gridtext);
-            backgroundcolor.setPadding(470,700,450,100);
-        }else if(color == 4){
-            backgroundcolor.setBackgroundColor(Color.LTGRAY);
-            gridtext.setText("LIGHT GRAY");
-            backgroundcolor.addView(gridtext);
-            backgroundcolor.setPadding(470,700,450,100);
-        }else if(color == 5){
-            backgroundcolor.setBackgroundColor(Color.GRAY);
-            gridtext.setText("GRAY");
-            backgroundcolor.addView(gridtext);
-            backgroundcolor.setPadding(470,700,450,100);
-        }else if(color == 6){
-            backgroundcolor.setBackgroundColor(Color.WHITE);
-            gridtext.setText("WHITE");
-            backgroundcolor.addView(gridtext);
-            backgroundcolor.setPadding(470,700,450,100);
-        }else if(color == 7){
-            backgroundcolor.setBackgroundColor(Color.BLACK);
-            gridtext.setText("BLACK");
-            backgroundcolor.addView(gridtext);
-            backgroundcolor.setPadding(470,700,450,100);
-        }else if(color == 8){
-            backgroundcolor.setBackgroundColor(Color.BLUE);
-            gridtext.setText("BLUE");
-            backgroundcolor.addView(gridtext);
-            backgroundcolor.setPadding(470,700,450,100);
-        }else if(color == 9){
-            backgroundcolor.setBackgroundColor(Color.GREEN);
-            gridtext.setText("GREEN");
-            backgroundcolor.addView(gridtext);
-            backgroundcolor.setPadding(470,700,450,100);
-        }else if(color == 10){
-            backgroundcolor.setBackgroundColor(Color.YELLOW);
-            gridtext.setText("YELLOW");
-            backgroundcolor.addView(gridtext);
-            backgroundcolor.setPadding(470,700,450,100);
-        }else if(color == 11){
-            backgroundcolor.setBackgroundColor(Color.RED);
-            gridtext.setText("RED");
-            backgroundcolor.addView(gridtext);
-            backgroundcolor.setPadding(470,700,450,100);
-        }
+
+
+
+
+
+
+        String color = getIntent().getStringExtra(PaletteActivity.COLOR_KEY);
+        ((TextView) findViewById(R.id.textView)).setText(label);
+
+        findViewById(R.id.gridlayout).setBackgroundColor(Color.parseColor(mycolor.toLowerCase()));
+
     }
-
-
-
 }
