@@ -51,11 +51,11 @@ public class PaletteFragment extends Fragment {
         });
         return l;
     }
-        
+
     public void addColorSelectListener(OnItemSelectedListener listener){
         this.listener = listener;
     }
-
+                   
     public interface OnItemSelectedListener{
         void onItemSelected(String colorHex);
         void CanvasName(String colorname);
