@@ -3,9 +3,10 @@
     <string name="app_name">Application de changement de couleur</string>
 
     <string name="PaletteActivity">Activité de la palette</string>
-    <string name="CanvasActivity">Activité de toile</string>
+
     <string name="labletext">Sélectionnez une couleur ci-dessous pour lancer le canevas</string>
-             
+    <string name="CanvasText">TextView</string>
+
     <string-array name="MyArray">
         <item>ROUGE</item>
         <item>JAUNE</item>
@@ -17,10 +18,9 @@
         <item>NOIRE</item>
         <item>CYAN</item>
         <item>VERTE</item>
-
         <item>MAGENTA</item>
         <item>ROUGE</item>
     </string-array>
 
-
+      
 </resources>

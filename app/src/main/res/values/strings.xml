@@ -1,9 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Color Changing App</string>
 
     <string name="PaletteActivity">PaletteActivity</string>
-    <string name="CanvasActivity">CanvasActivity</string>
+
     <string name="labletext">Select a color below to launch the Canvas</string>
+    <string name="CanvasText">TextView</string>
 
     <string-array name="MyArray">
         <item>RED</item>

@@ -11,9 +11,7 @@
         android:configChanges="layoutDirection|locale"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".CanvasActivity"
-            android:label ="Canvas Activity"></activity>
-        <activity android:name=".PaletteActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
