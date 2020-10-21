@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        paletteFragment = PaletteFragment.newInstance(colors);
+
         getSupportActionBar().setTitle(R.string.PaletteActivity);
 
 

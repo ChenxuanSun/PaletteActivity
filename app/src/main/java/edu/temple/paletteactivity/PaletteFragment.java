@@ -24,6 +24,17 @@ public class PaletteFragment extends Fragment {
         // Required empty public constructor
     }
 
+
+    public static PaletteFragment newInstance(String [] colors) {
+
+        Bundle args = new Bundle();
+        args.putSerializable("color",colors);
+        PaletteFragment fragment = new PaletteFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
