@@ -51,7 +51,7 @@ public class PaletteFragment extends Fragment {
         });
         return l;
     }
-
+        
     public void addColorSelectListener(OnItemSelectedListener listener){
         this.listener = listener;
     }
